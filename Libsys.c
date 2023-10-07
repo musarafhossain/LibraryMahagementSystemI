@@ -17,35 +17,18 @@ int main(){
         //print date
         printDate(100,4);
         //get choice to complete specific task
-        int ch; 
-        ch = choice(60,21,8);
-        //switch case to perform specific task
-        switch (ch){
-            case 0:
-                exit(1);
-            case 1:
-                //dashboard();
-                break;
-            case 2:
-                //checkIn();
-                break;
-            case 3:
-                //checkOut();
-                break;
-            case 4:
-                //booksInfo();
-                break;
-            case 5:
-                //studentsInfo();
-                break;
-            case 6:
-                //LibrarianInfo();
-                break;
-            case 7:
-                //help();
-                break;
-            default:
-                errorMessage(60,23);
+        int ch = choice(60,21,8);
+        // Define an array of function pointers
+        void (*functions[])(void) = {NULL, /*dashboard, checkIn, checkOut, booksInfo, studentsInfo, librarianInfo, help*/};
+        // Check if the choice is within a valid range and call the corresponding function
+        if (ch == 0) {
+            // Terminate the program when 0 is selected
+            exit(0);
+        } else if (ch >= 1 && ch <= 7 && functions[ch] != NULL) {
+            // Call the corresponding function for valid choices
+            functions[ch]();
+        } else {
+            errorMessage(60, 23);
         }                 
     }
 }
