@@ -5,6 +5,64 @@
 
 #include "library.h"
 
+//function declaration
+void dashboard(void);
+void checkIn(void);
+void checkOut(void);
+void booksInfo(void);
+void studentsInfo(void);
+void librarianInfo(void);
+void help(void);
+
+//define dashboard function
+void dashboard(){
+    system("cls");
+    printf("Welcome to Dashboard...Enter to continue");
+    getch();
+}
+
+//define checkIn function
+void checkIn(){
+    system("cls");
+    printf("Welcome to CheckIn...Enter to continue");
+    getch();
+}
+
+//define checkOut function
+void checkOut(){
+    system("cls");
+    printf("Welcome to CheckOut...Enter to continue");
+    getch();
+}
+
+//define booksInfo function
+void booksInfo(){
+    system("cls");
+    printf("Welcome to BooksInfo...Enter to continue");
+    getch();
+}
+
+//define studentsInfo function
+void studentsInfo(){
+    system("cls");
+    printf("Welcome to StudentsInfo...Enter to continue");
+    getch();
+}
+
+//define librarianInfo function
+void librarianInfo(){
+    system("cls");
+    printf("Welcome to LibrarianInfo...Enter to continue");
+    getch();
+}
+
+//define help function
+void help(){
+    system("cls");
+    printf("Welcome to Help...Enter to continue");
+    getch();
+}
+
 int main(){
     while (1){ // Infinite loop
         //clear console
@@ -19,7 +77,7 @@ int main(){
         //get choice to complete specific task
         int ch = choice(60,21,8);
         // Define an array of function pointers
-        void (*functions[])(void) = {NULL, /*dashboard, checkIn, checkOut, booksInfo, studentsInfo, librarianInfo, help*/};
+        void (*functions[])(void) = {NULL, dashboard, checkIn, checkOut, booksInfo, studentsInfo, librarianInfo, help};
         // Check if the choice is within a valid range and call the corresponding function
         if (ch == 0) {
             // Terminate the program when 0 is selected
