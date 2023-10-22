@@ -111,6 +111,13 @@ void addStudent(){
     FILE *fp;
     struct STUDENT student;
     fp = fopen("studentData.dat","ab+");
+    if(fp==NULL){
+        system("cls");
+        fclose(fp);
+        printf("File Not Found...\nEnter to continue...");
+        getch();
+        return;
+    }
     greetingMessage(25, 3, "~: Add New Student Record :~");
     student = inputStudentData();
     gotoxy(30,22);

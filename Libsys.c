@@ -6,6 +6,8 @@
 #include "library.h"
 #include "book.h"
 #include "student.h"
+#include "librarian.h"
+#include "checkinout.h"
 
 //function declaration
 void dashboard(void);
@@ -25,16 +27,52 @@ void dashboard(){
 
 //define checkIn function
 void checkIn(){
-    system("cls");
-    printf("Welcome to CheckIn...Enter to continue");
-    getch();
+    while (1){
+        int ch;
+        system("cls");
+        greetingMessage(6, 3, "~: Book Check-In :~");
+        char itemList[][25] = {"Back", "Check-in", "Current Checked-in Book"};
+        menu(15,9,3,itemList);
+        ch = choice(60, 21, 3);
+        switch (ch){
+            case 0:
+                return;
+            case 1:
+                checkInBook();
+                break;
+            case 2:
+                currentCheckInBook();
+                break;
+            default:
+                errorMessage(60, 23);
+                break;
+        }
+    }
 }
 
 //define checkOut function
 void checkOut(){
-    system("cls");
-    printf("Welcome to CheckOut...Enter to continue");
-    getch();
+    while (1){
+        int ch;
+        system("cls");
+        greetingMessage(6, 3, "~: Book Check-Out :~");
+        char itemList[][25] = {"Back", "Check-out", "Checked-out History"};
+        menu(15,9,3,itemList);
+        ch = choice(60, 21, 3);
+        switch (ch){
+            case 0:
+                return;
+            case 1:
+                checkOutBook();
+                break;
+            case 2:
+                checkOutHistory();
+                break;
+            default:
+                errorMessage(60, 23);
+                break;
+        }
+    }
 }
 
 //define booksInfo function
@@ -102,9 +140,26 @@ void studentsInfo(){
 
 //define librarianInfo function
 void librarianInfo(){
-    system("cls");
-    printf("Welcome to LibrarianInfo...Enter to continue");
-    getch();
+    int ch;
+    while(1){
+        system("cls");
+        greetingMessage(6, 3, "~: LIBRARIAN INFO :~");
+        char itemsList[][25] = {"Back", "Edit Librarian Info", "View Libraraian Info"};
+        menu(15,9,3,itemsList);
+        ch = choice(60,10,3);
+        switch(ch){
+            case 0:
+                return; //Exit the function
+            case 1:
+                editLibrarianInfo();
+                break;
+            case 2:
+                viewLibrarian();
+                break;
+            default:
+                errorMessage(60,12);
+        }
+    }
 }
 
 //define help function
