@@ -189,7 +189,7 @@ void deleteStudent(){
 void viewStudent(){
     system("cls");
     char header[][20] = {"NAME", "ROLL", "CLASS", "STREAM", "SUBJECT", "PHONE"};
-    int columnLen[] = {30,10,15,10,15,12};
+    int columnLen[] = {30,10,15,10,20,12};
     int columnNo = 6;
     char fileName[] = "studentData.dat";
     char fileMode[] = "rb";
