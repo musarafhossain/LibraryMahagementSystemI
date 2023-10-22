@@ -4,14 +4,7 @@
 #include<windows.h>
 
 #include "library.h"
-
-//create a LIBRARIAN stucture to represent a librarian information
-struct LIBRARIAN{
-    char name[30];
-    char appDate[15];
-    char address[100];
-    char phone[15];
-};
+#include "librarian.h"
 
 //create a function to take input of librarian data
 struct LIBRARIAN inputLibrarianData(){

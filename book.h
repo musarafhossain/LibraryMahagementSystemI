@@ -1,5 +1,14 @@
 //function declaration
 
+//create a BOOK stucture to represent a book information
+struct BOOK{
+    char title[42];
+    char author[27];
+    char id[10];
+    char price[12];
+    char publicationYear[12];
+};
+
 //a function that take input book information from user
 struct BOOK inputBookData(void);
 

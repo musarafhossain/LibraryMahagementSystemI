@@ -6,37 +6,7 @@
 #include "library.h"
 #include "book.h"
 #include "student.h"
-
-//create a check-in data representing structure
-struct CHECKIN{
-    char title[50];
-    char bookId[15];
-    char studentName[30];
-    char studentClass[15];
-    char studentPhone[12];
-    char checkInDate[13];
-    char checkOutDate[13];
-};
-
-//create a STUDENT stucture to represent a student information
-struct STUDENT{
-    char student_name[32];
-    char roll_no[12];
-    char student_class[17];
-    char stream[12];
-    char subject[22];
-    char phone[12];
-
-};
-
-//create a BOOK stucture to represent a book information
-struct BOOK{
-    char title[42];
-    char author[27];
-    char id[10];
-    char price[12];
-    char publicationYear[12];
-};
+#include "checkinout.h"
 
 //create a function to take input of checkIn data
 struct CHECKIN inputCheckInData(){

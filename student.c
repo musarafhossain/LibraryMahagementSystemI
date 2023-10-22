@@ -4,17 +4,7 @@
 #include<windows.h>
 
 #include "library.h"
-
-//create a STUDENT stucture to represent a student information
-struct STUDENT{
-    char student_name[32];
-    char roll_no[12];
-    char student_class[17];
-    char stream[12];
-    char subject[22];
-    char phone[12];
-
-};
+#include "student.h"
 
 //create a function to take input of book data
 struct STUDENT inputStudentData(){

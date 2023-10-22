@@ -1,5 +1,13 @@
 //function declaration
 
+//create a LIBRARIAN stucture to represent a librarian information
+struct LIBRARIAN{
+    char name[30];
+    char appDate[15];
+    char address[100];
+    char phone[15];
+};
+
 //a function that take input librarian information from user
 struct LIBRARIAN inputLibrarianData(void);
 

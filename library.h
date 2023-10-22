@@ -23,3 +23,5 @@ int choice(int, int, int);
 //a function that print a error message at any position 
 //2 argument receives (x-distance, y-distance)
 void errorMessage(int, int);
+
+void board(void);

@@ -1,5 +1,16 @@
 //function declaration
 
+//create a STUDENT stucture to represent a student information
+struct STUDENT{
+    char student_name[32];
+    char roll_no[12];
+    char student_class[17];
+    char stream[12];
+    char subject[22];
+    char phone[12];
+
+};
+
 //a function that take input student information from user
 struct STUDENT inputStudentData(void);
 

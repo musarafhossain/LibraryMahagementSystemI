@@ -8,6 +8,7 @@
 #include "student.h"
 #include "librarian.h"
 #include "checkinout.h"
+#include "dashboard.h"
 
 //function declaration
 void dashboard(void);
@@ -20,9 +21,28 @@ void help(void);
 
 //define dashboard function
 void dashboard(){
-    system("cls");
-    printf("Welcome to Dashboard...Enter to continue");
-    getch();
+    while (1){
+        int ch;
+        system("cls");
+        greetingMessage(30, 3, "~: Dashboard :~");
+        board();
+        char itemList[][25] = {"Back", "Search Book", "Search Student"};
+        menu(85,9,3,itemList);
+        ch = choice(70, 17, 3);
+        switch (ch){
+            case 0:
+                return;
+            case 1:
+                searchBook();
+                break;
+            case 2:
+                searchStudent();
+                break;
+            default:
+                errorMessage(60, 23);
+                break;
+        }
+    }
 }
 
 //define checkIn function
@@ -169,6 +189,7 @@ void help(){
     getch();
 }
 
+//main function...code execution start from here
 int main(){
     while (1){ // Infinite loop
         //clear console

@@ -1,3 +1,14 @@
+//create a check-in data representing structure
+struct CHECKIN{
+    char title[50];
+    char bookId[15];
+    char studentName[30];
+    char studentClass[15];
+    char studentPhone[12];
+    char checkInDate[13];
+    char checkOutDate[13];
+};
+
 //a function that check in books
 void checkInBook(void);
 
