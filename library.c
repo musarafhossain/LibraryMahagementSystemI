@@ -78,7 +78,7 @@ int choice(int x,int y, int a){
     int ch;
     a--;
     gotoxy(x,y);
-    printf("Enter your choice (1-%d):- ",a);
+    printf("Enter your choice (0-%d):- ",a);
     scanf("%d",&ch);
     return ch;
 }

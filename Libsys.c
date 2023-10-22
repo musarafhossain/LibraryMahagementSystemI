@@ -4,6 +4,8 @@
 #include<windows.h>
 
 #include "library.h"
+#include "book.h"
+#include "student.h"
 
 //function declaration
 void dashboard(void);
@@ -37,16 +39,65 @@ void checkOut(){
 
 //define booksInfo function
 void booksInfo(){
-    system("cls");
-    printf("Welcome to BooksInfo...Enter to continue");
-    getch();
+    int ch;
+    while(1){ //infinite loop
+        system("cls");
+        greetingMessage(6, 3, "~: BOOKS INFO :~");
+        char itemsList[][25] = {"Back", "Add Book Record", "Delete Book Record","View Current Books", "Update Book Record", "Pending Books"};
+        menu(15,9,6,itemsList);
+        ch = choice(60,21,6);
+        switch(ch){
+            case 0: 
+                return; //Exit the function
+            case 1:
+                addBook();
+                break;
+            case 2:
+                deleteBook();
+                break;
+            case 3:
+                viewBook();
+                break;
+            case 4:
+                updateBook();
+                break;
+            case 5:
+                //pendingBook();
+                break;
+            default:
+                errorMessage(60,23);
+        }
+    }
 }
 
 //define studentsInfo function
 void studentsInfo(){
-    system("cls");
-    printf("Welcome to StudentsInfo...Enter to continue");
-    getch();
+    int ch;
+    while(1){ //infinite loop
+        system("cls");
+        greetingMessage(6, 3, "~: STUDENTS INFO :~");
+        char itemsList[][25] = {"Back", "Add Student Record", "Delete Student Record","View Current Students", "Update Student Record"};
+        menu(15,9,5,itemsList);
+        ch = choice(60,21,5);
+        switch(ch){
+            case 0: 
+                return; //Exit the function
+            case 1:
+                addStudent();
+                break;
+            case 2:
+                deleteStudent();
+                break;
+            case 3:
+                viewStudent();
+                break;
+            case 4:
+                updateStudent();
+                break;
+            default:
+                errorMessage(60,23);
+        }
+    }
 }
 
 //define librarianInfo function
