@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "librarian.h": "c",
+        "student.h": "c",
+        "checkinout.h": "c",
+        "dashboard.h": "c"
+    }
+}
