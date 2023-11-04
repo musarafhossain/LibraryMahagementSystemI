@@ -74,11 +74,16 @@ void printStudentTable(char (*header)[20], int columnLength[], int columnNo, cha
         return;
     }
     struct STUDENT student;
+    //serial number of each student data
+    int temp=1;
     // Read and print each record with dynamic column lengths
     while (fread(&student, sizeof(student), 1, fp) > 0) {
+        char serial[8];
+        //serial number of each student data
+        sprintf(serial, " %d", temp);
+        temp++;
         for (int i = 0; i < columnNo; i++) {
-            printf("|%-*s", columnLength[i], i == 0 ? student.student_name : (i == 1 ? student.roll_no : (i == 2 ? student.student_class : 
-                                                                        (i == 3 ? student.stream : (i ==4 ? student.subject : student.phone)))));
+            printf("|%-*s", columnLength[i], i ==0 ? serial : (i == 1 ? student.student_name : (i == 2 ? student.roll_no : (i == 3 ? student.student_class : (i == 4 ? student.stream : (i ==5 ? student.subject : student.phone))))));
         }
         printf("|\n");
         printf("+");
@@ -188,9 +193,9 @@ void deleteStudent(){
 //a function that view student record from database
 void viewStudent(){
     system("cls");
-    char header[][20] = {"NAME", "ROLL", "CLASS", "STREAM", "SUBJECT", "PHONE"};
-    int columnLen[] = {30,10,15,10,20,12};
-    int columnNo = 6;
+    char header[][20] = {"SL N0.", "NAME", "ROLL", "CLASS", "STREAM", "SUBJECT", "PHONE"};
+    int columnLen[] = {8,30,10,15,10,20,12};
+    int columnNo = 7;
     char fileName[] = "studentData.dat";
     char fileMode[] = "rb";
     greetingMessage(26, 2, "~: Current Students :~");

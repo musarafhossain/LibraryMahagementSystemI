@@ -70,10 +70,16 @@ void printBookTable(char (*header)[20], int columnLength[], int columnNo, char f
         return;
     }
     struct BOOK book;
+    //serial number of each student data
+    int temp=1;
     // Read and print each record with dynamic column lengths
     while (fread(&book, sizeof(book), 1, fp) > 0) {
+        char serial[8];
+        //serial number of each student data
+        sprintf(serial, " %d", temp);
+        temp++;
         for (int i = 0; i < columnNo; i++) {
-            printf("|%-*s", columnLength[i], i == 0 ? book.id : (i == 1 ? book.title : (i == 2 ? book.author : (i == 3 ? book.price : book.publicationYear))));
+            printf("|%-*s", columnLength[i], i == 0 ? serial : (i==1 ? book.id : (i == 2 ? book.title : (i == 3 ? book.author : (i == 4 ? book.price : book.publicationYear)))));
         }
         printf("|\n");
         printf("+");
@@ -182,9 +188,9 @@ void deleteBook(){
 //a function that view book record from database
 void viewBook(){
     system("cls");
-    char header[][20] = {"BOOK ID", "BOOK NAME", "AUTHOR NAME", "PRICE", "PUBL.YEAR"};
-    int columnLen[] = {15,30,25,12,12};
-    int columnNo = 5;
+    char header[][20] = {"SL NO.", "BOOK ID", "BOOK NAME", "AUTHOR NAME", "PRICE", "PUBL.YEAR"};
+    int columnLen[] = {8,15,30,25,12,12};
+    int columnNo = 6;
     char fileName[] = "bookData.dat";
     char fileMode[] = "rb";
     greetingMessage(26, 2, "~: Current Books :~");
