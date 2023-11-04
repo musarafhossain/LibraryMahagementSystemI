@@ -189,7 +189,7 @@ void deleteBook(){
 void viewBook(){
     system("cls");
     char header[][20] = {"SL NO.", "BOOK ID", "BOOK NAME", "AUTHOR NAME", "PRICE", "PUBL.YEAR"};
-    int columnLen[] = {8,15,30,25,12,12};
+    int columnLen[] = {8,15,40,20,12,12};
     int columnNo = 6;
     char fileName[] = "bookData.dat";
     char fileMode[] = "rb";
