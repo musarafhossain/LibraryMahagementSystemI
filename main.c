@@ -120,7 +120,7 @@ void booksInfo(){
                 updateBook();
                 break;
             case 5:
-                //pendingBook();
+                currentCheckInBook();
                 break;
             default:
                 errorMessage(60,23);
