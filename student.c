@@ -262,6 +262,3 @@ void updateStudent(){
     printf("Press any key to continue.....");
     getch();
 }
-
-
-

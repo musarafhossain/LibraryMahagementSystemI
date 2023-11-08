@@ -24,4 +24,5 @@ int choice(int, int, int);
 //2 argument receives (x-distance, y-distance)
 void errorMessage(int, int);
 
+//to show book, registered student, chek-out books, librarian number
 void board(void);

@@ -79,8 +79,10 @@ int choice(int x,int y, int a){
     a--;
     gotoxy(x,y);
     printf("Enter your choice (0-%d):- ",a);
-    scanf("%d",&ch);
-    return ch;
+     do {
+        ch = _getch();
+    } while (ch < '0' || ch > '0' + a);
+    return ch - '0';
 }
 
 //a function that print a error message at any position 
