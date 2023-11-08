@@ -92,19 +92,19 @@ void searchBook() {
     int i = 22;
 
     gotoxy(0, i);
-    printf("+---------------+------------------------------+-------------------------+----------+-------------+");
+    printf("+---------------+----------------------------------------+-------------------------+----------+-------------+");
     gotoxy(0, i + 1);
-    printf("|      ID       |           Title              |         Author          |  Price   | Publication |");
+    printf("|      ID       |                Title                   |         Author          |  Price   | Publication |");
     gotoxy(0, i + 2);
-    printf("+---------------+------------------------------+-------------------------+----------+-------------+");
+    printf("+---------------+----------------------------------------+-------------------------+----------+-------------+");
     i += 3;
 
     while (fread(&book, sizeof(book), 1, fp) > 0) {
         if (strcmp(book.id, temp) == 0 || strcmp(book.title, temp) == 0) {
             gotoxy(0, i);
-            printf("|%-15s|%-30s|%-25s|%-10s|%-13s|", book.id, book.title, book.author, book.price, book.publicationYear);
+            printf("|%-15s|%-40s|%-25s|%-10s|%-13s|", book.id, book.title, book.author, book.price, book.publicationYear);
             gotoxy(0, i + 1);
-            printf("+---------------+------------------------------+-------------------------+----------+-------------+\nEnter to continue...");
+            printf("+---------------+----------------------------------------+-------------------------+----------+-------------+\nEnter to continue...");
             i += 2;
             found = 1; // Book found
         }
