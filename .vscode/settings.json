@@ -3,6 +3,11 @@
         "librarian.h": "c",
         "student.h": "c",
         "checkinout.h": "c",
-        "dashboard.h": "c"
+        "dashboard.h": "c",
+        "stdio.h": "c",
+        "conio.h": "c",
+        "windows.h": "c",
+        "book.h": "c",
+        "library.h": "c"
     }
 }
