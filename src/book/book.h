@@ -1,4 +1,5 @@
-//function declaration
+#ifndef BOOK_H
+#define BOOK_H
 
 //create a BOOK stucture to represent a book information
 struct BOOK{
@@ -27,3 +28,5 @@ void viewBook(void);
 
 //a function that update book record of database
 void updateBook(void);
+
+#endif

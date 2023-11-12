@@ -1,3 +1,6 @@
+#ifndef DASHBOARD_H
+#define DASHBOARD_H
+
 //function to show detaits(like book number, registered student number, librarian number, check-in number) in dashboards
 void board(void);
 
@@ -6,3 +9,5 @@ void searchBook(void);
 
 //function to search student from file and view data
 void searchStudent(void);
+
+#endif

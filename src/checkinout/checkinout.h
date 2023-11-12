@@ -1,3 +1,6 @@
+#ifndef CHECKINOUT_H
+#define CHECKINOUT_H
+
 //create a check-in data representing structure
 struct CHECKIN{
     char title[50];
@@ -26,3 +29,5 @@ void checkOutBook(void);
 
 //a function that view checked out books
 void checkOutHistory(void);
+
+#endif

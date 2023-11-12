@@ -1,4 +1,5 @@
-//function declaration
+#ifndef STUDENT_H
+#define STUDENT_H
 
 //create a STUDENT stucture to represent a student information
 struct STUDENT{
@@ -29,3 +30,5 @@ void viewStudent(void);
 
 //a function that update student record of database
 void updateStudent(void);
+
+#endif

@@ -1,4 +1,5 @@
-//function declaration
+#ifndef LIBRARY_H
+#define LIBRARY_H
 
 //a function that print greeting message in a box at any position
 //3 argument receives (x-distance, y-distance, message to print[max char- 43])
@@ -26,3 +27,5 @@ void errorMessage(int, int);
 
 //to show book, registered student, chek-out books, librarian number
 void board(void);
+
+#endif

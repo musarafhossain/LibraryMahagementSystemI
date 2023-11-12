@@ -4,8 +4,8 @@
             "name": "C/C++: gcc.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
-            "args": ["-o","book.h", "library.h", "main.c", "student.h", "librarian.h", "checkinout.h", "dashboard.h"],
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [], // Remove compiler arguments from here
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
