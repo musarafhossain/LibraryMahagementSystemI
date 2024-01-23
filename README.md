@@ -2,9 +2,12 @@
 This is a Library Management System developed in C language.<br>
 Developer -> Musaraf Hossain (Computer Science)
 # ScreenShorts
-<img src="screenshots/main_menu.png" alt="Example Image" width="600"/>
-# Library Management System Documentation
+## Main Menu
+<img src="screenshots/main_menu.png" alt="Main Menu" width="600"/>
+## Dashboard
+<img src="screenshots/dashboard.png" alt="Dashboard" width="600"/>
 
+# Library Management System Documentation
 ## 1. Introduction
 Welcome to the Library Management System documentation! This system is designed to help libraries efficiently manage their books and student records. This guide will help you understand, install, and use the system.
 
