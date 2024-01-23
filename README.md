@@ -42,10 +42,14 @@ The help section provides guidance. It can be enhanced with more detailed explan
 ## 3. Getting Started
 
 ### 3.1 Installation
-Download VS code and C compiler and set the C compiler path in the path variable.
+Download C compiler and set the C compiler path in the path variable.
 
 ### 3.2 Initial Setup
-Open the project folder from VS code and open main.c file and the click on the run button on the corner of VS code and the program will be compiled and run. And also the .exe file is given where you can run directly. If you want to see the code then it is also given.
+Open the project folder from command prompt. To run the program, use the following CMD command:
+```cmd
+gcc main.c src/book/book.c src/checkinout/checkinout.c src/dashboard/dashboard.c src/librarian/librarian.c src/student/student.c src/library/library.c -o LibSys
+```
+and then hit the enter button and the program will be compiled and run. And also the LibSys.exe file is given where you can run directly. If you want to see the code then it is also given.
 
 ## 4. Using the System
 
