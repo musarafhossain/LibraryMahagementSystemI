@@ -193,11 +193,7 @@ void help(){
 //main function...code execution start from here
 int main(){
     // Create "data" directory
-    #ifdef _WIN32
-        system("mkdir data");
-    #else
-        system("mkdir -p data");
-    #endif
+    system("mkdir data");
     while (1){ // Infinite loop
         //clear console
         system("cls");
