@@ -4,6 +4,8 @@
 #include<windows.h>
 #include<time.h>
 
+#include "library.h"
+
 //function define
 
 //a function that print anything at any position in console

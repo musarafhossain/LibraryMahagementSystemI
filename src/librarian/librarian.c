@@ -3,7 +3,7 @@
 #include<conio.h>
 #include<windows.h>
 
-#include "library.h"
+#include "../library/library.h"
 #include "librarian.h"
 
 //create a function to take input of librarian data
@@ -90,7 +90,7 @@ void printLibrarianTable(char (*header)[20], int columnLength[], int columnNo, c
 void addLibrarian(){
     system("cls");
     struct LIBRARIAN librarian;
-    FILE *fp = fopen("librarianData.dat","ab+");
+    FILE *fp = fopen("data/librarianData.dat","ab+");
     greetingMessage(25, 3, "~: ADD LIBRARIAN INFO :~");
     librarian = inputLibrarianData();
     gotoxy(30,22);
@@ -114,7 +114,7 @@ void deleteLibrarian(){
     printf("Enter Librarian Name : ");
     fflush(stdin);
     gets(name);
-    FILE *fp = fopen("librarianData.dat", "rb+");
+    FILE *fp = fopen("data/librarianData.dat", "rb+");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -123,7 +123,7 @@ void deleteLibrarian(){
         return;
     }
     // Create a temporary file to store the records that are not being deleted
-    FILE *tempFile = fopen("tempfile.dat", "wb"); // Open for writing
+    FILE *tempFile = fopen("data/tempfile.dat", "wb"); // Open for writing
     if(tempFile==NULL){
         system("cls");
         fclose(fp);
@@ -148,9 +148,9 @@ void deleteLibrarian(){
     fclose(fp);
     fclose(tempFile);
     // Remove the original file
-    remove("librarianData.dat");
+    remove("data/librarianData.dat");
     // Rename the temporary file to the original file name
-    if (rename("tempfile.dat", "librarianData.dat") == 0) {
+    if (rename("data/tempfile.dat", "data/librarianData.dat") == 0) {
         if (deleted) {
             gotoxy(30, 22);
             printf("Librarian record(s) deleted successfully.\n");
@@ -173,7 +173,7 @@ void viewLibrarian(){
     char header[][20]={"Name", "Apt. Date", "Address", "Phone"};
     int colLen[] = {20,13,70,12};
     int colNo = 4;
-    char fileName[] = "librarianData.dat";
+    char fileName[] = "data/librarianData.dat";
     char fileMode[] = "rb+";
     greetingMessage(26, 2, "~: Librarian Info :~");
     printLibrarianTable(header, colLen, colNo, fileName, fileMode);

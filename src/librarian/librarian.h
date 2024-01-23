@@ -1,6 +1,3 @@
-#ifndef LIBRARIAN_H
-#define LIBRARIAN_H
-
 //create a LIBRARIAN stucture to represent a librarian information
 struct LIBRARIAN{
     char name[30];
@@ -27,5 +24,3 @@ void viewLibrarian(void);
 
 //create a function that edit librarian data
 void editLibrarianInfo(void);
-
-#endif

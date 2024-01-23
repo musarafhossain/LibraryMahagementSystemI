@@ -3,9 +3,9 @@
 #include<conio.h>
 #include<windows.h>
 
-#include "library.h"
-#include "book.h"
-#include "student.h"
+#include "../library/library.h"
+#include "../book/book.h"
+#include "../student/student.h"
 #include "checkinout.h"
 
 //create a function to take input of checkIn data
@@ -101,7 +101,6 @@ void printDataTable(char (*header)[20], int columnLength[], int columnNo, char f
     getch();
 }
 
-
 //a function that check in books
 void checkInBook(){
     system("cls");
@@ -111,9 +110,9 @@ void checkInBook(){
     struct STUDENT student;
     checkIn = inputCheckInData();
     FILE *checkinfile, *bookfile, *studentfile;
-    checkinfile = fopen("checkInData.dat", "ab+");
-    bookfile = fopen("bookData.dat", "rb");
-    studentfile = fopen("studentData.dat", "rb");
+    checkinfile = fopen("data/checkInData.dat", "ab+");
+    bookfile = fopen("data/bookData.dat", "rb");
+    studentfile = fopen("data/studentData.dat", "rb");
     if(checkinfile==NULL||bookfile==NULL||studentfile==NULL){
         system("cls");
         fclose(checkinfile);
@@ -160,7 +159,7 @@ void currentCheckInBook(){
     char header[][20] = {"STUDENT NAME", "BOOK ID", "BOOK NAME", "STD. CLASS", "CHECK-IN-DATE", "CHECK-OUT-DATE", "PHONE"};
     int columnLen[] = {20,10,25,15,15,15,12};
     int columnNo = 7;
-    char fileName[] = "checkInData.dat";
+    char fileName[] = "data/checkInData.dat";
     char fileMode[] = "rb";
     greetingMessage(26, 2, "~: Current Checked-In Books :~");
     printDataTable(header, columnLen, columnNo, fileName, fileMode);
@@ -172,7 +171,7 @@ void checkOutBook(){
     greetingMessage(25, 3, "~: Book Check-Out :~");
     struct CHECKIN checkIn;
     checkIn = inputCheckInData();
-    FILE *fp = fopen("checkInData.dat", "rb+");
+    FILE *fp = fopen("data/checkInData.dat", "rb+");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -181,8 +180,8 @@ void checkOutBook(){
         return;
     }
     // Create a temporary file to store the records that are not being deleted
-    FILE *tempFile = fopen("tempfile.dat", "wb"); // Open for writing
-    FILE *checkoutfile = fopen("checkOutData.dat", "ab+");
+    FILE *tempFile = fopen("data/tempfile.dat", "wb"); // Open for writing
+    FILE *checkoutfile = fopen("data/checkOutData.dat", "ab+");
     if(tempFile==NULL){
         system("cls");
         fclose(fp);
@@ -208,9 +207,9 @@ void checkOutBook(){
     fclose(fp);
     fclose(tempFile);
     // Remove the original file
-    remove("checkInData.dat");
+    remove("data/checkInData.dat");
     // Rename the temporary file to the original file name
-    if (rename("tempfile.dat", "checkInData.dat") == 0) {
+    if (rename("data/tempfile.dat", "data/checkInData.dat") == 0) {
         if (deleted) {
             gotoxy(30, 22);
             printf("Checked-out successfully.\n");
@@ -233,7 +232,7 @@ void checkOutHistory(){
     char header[][20] = {"STUDENT NAME", "BOOK ID", "BOOK NAME", "STD. CLASS", "CHECK-IN-DATE", "CHECK-OUT-DATE", "PHONE"};
     int columnLen[] = {20,10,25,15,15,15,12};
     int columnNo = 7;
-    char fileName[] = "checkOutData.dat";
+    char fileName[] = "data/checkOutData.dat";
     char fileMode[] = "rb";
     greetingMessage(26, 2, "~: Current Checked-Out Books :~");
     printDataTable(header, columnLen, columnNo, fileName, fileMode);

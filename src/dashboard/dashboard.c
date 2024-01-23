@@ -3,11 +3,12 @@
 #include<conio.h>
 #include<windows.h>
 
-#include "library.h"
-#include "book.h"
-#include "student.h"
-#include "librarian.h"
-#include "checkinout.h"
+#include "../library/library.h"
+#include "../book/book.h"
+#include "../student/student.h"
+#include "../librarian/librarian.h"
+#include "../checkinout/checkinout.h"
+#include "dashboard.h"
 
 //function to show detaits(like book number, registered student number, librarian number, check-in number) in dashboards
 void board(){
@@ -28,10 +29,10 @@ void board(){
 
     FILE *bookfile, *studentfile, *librarianfile, *checkinfile;
 
-    bookfile = fopen("bookData.dat", "rb");
-    studentfile = fopen("studentData.dat", "rb");
-    librarianfile = fopen("librarianData.dat", "rb");
-    checkinfile = fopen("checkInData.dat", "rb");
+    bookfile = fopen("data/bookData.dat", "rb");
+    studentfile = fopen("data/studentData.dat", "rb");
+    librarianfile = fopen("data/librarianData.dat", "rb");
+    checkinfile = fopen("data/checkInData.dat", "rb");
     
     while(fread(&book, sizeof(book), 1, bookfile) > 0){
         bookNum++;
@@ -78,7 +79,7 @@ void board(){
 }
 
 //function to search book from file and view data
-void searchBook() {
+void searchBook(){
     struct BOOK book;
     char temp[50];
     int found = 0; // To track if the book was found
@@ -88,7 +89,7 @@ void searchBook() {
     fflush(stdin);
     gets(temp);
 
-    FILE *fp = fopen("bookData.dat", "rb");
+    FILE *fp = fopen("data/bookData.dat", "rb");
     int i = 22;
 
     gotoxy(0, i);
@@ -130,7 +131,7 @@ void searchStudent(){
     fflush(stdin);
     gets(temp);
 
-    FILE *fp = fopen("studentData.dat", "rb");
+    FILE *fp = fopen("data/studentData.dat", "rb");
     int i = 22;
 
     gotoxy(0, i);

@@ -3,7 +3,7 @@
 #include<conio.h>
 #include<windows.h>
 
-#include "library.h"
+#include "../library/library.h"
 #include "book.h"
 
 //create a function to take input of book data
@@ -106,7 +106,7 @@ void addBook(){
     printf("Press enter to add book.....");
     getch();
     FILE *fp;
-    fp = fopen("bookData.dat","ab+");
+    fp = fopen("data/bookData.dat","ab+");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -132,7 +132,7 @@ void deleteBook(){
     printf("Enter Book ID or Name : ");
     fflush(stdin);
     gets(temp);
-    FILE *fp = fopen("bookData.dat", "rb+");
+    FILE *fp = fopen("data/bookData.dat", "rb+");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -141,7 +141,7 @@ void deleteBook(){
         return;
     }
     // Create a temporary file to store the records that are not being deleted
-    FILE *tempFile = fopen("tempfile.dat", "wb"); // Open for writing
+    FILE *tempFile = fopen("data/tempfile.dat", "wb"); // Open for writing
     if(tempFile==NULL){
         system("cls");
         fclose(fp);
@@ -166,9 +166,9 @@ void deleteBook(){
     fclose(fp);
     fclose(tempFile);
     // Remove the original file
-    remove("bookData.dat");
+    remove("data/bookData.dat");
     // Rename the temporary file to the original file name
-    if (rename("tempfile.dat", "bookData.dat") == 0) {
+    if (rename("data/tempfile.dat", "data/bookData.dat") == 0) {
         if (deleted) {
             gotoxy(30, 22);
             printf("Book record(s) deleted successfully.\n");
@@ -191,7 +191,7 @@ void viewBook(){
     char header[][20] = {"SL NO.", "BOOK ID", "BOOK NAME", "AUTHOR NAME", "PRICE", "PUBL.YEAR"};
     int columnLen[] = {8,15,40,20,12,12};
     int columnNo = 6;
-    char fileName[] = "bookData.dat";
+    char fileName[] = "data/bookData.dat";
     char fileMode[] = "rb";
     greetingMessage(26, 2, "~: Current Books :~");
     printBookTable(header, columnLen, columnNo, fileName, fileMode);
@@ -207,8 +207,8 @@ void updateBook(){
     fflush(stdin);
     gets(temp);
     // Open the file for reading and writing
-    FILE *fp = fopen("bookData.dat","rb+");
-    FILE *tempFile = fopen("tempfile.dat", "wb"); // Open for writing
+    FILE *fp = fopen("data/bookData.dat","rb+");
+    FILE *tempFile = fopen("data/tempfile.dat", "wb"); // Open for writing
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -231,9 +231,9 @@ void updateBook(){
         fclose(tempFile);
         fclose(fp);
         // Remove the original file
-        remove("bookData.dat");
+        remove("data/bookData.dat");
 
-        rename("tempfile.dat", "bookData.dat");
+        rename("data/tempfile.dat", "data/bookData.dat");
 
         gotoxy(30,13);
         printf("Book Found...Press any key to continue.....");
@@ -241,7 +241,7 @@ void updateBook(){
         system("cls");
         greetingMessage(25, 3, "~: Update Books Record :~");
         newData = inputBookData();
-        FILE *fp = fopen("bookData.dat", "ab+");
+        FILE *fp = fopen("data/bookData.dat", "ab+");
         // Write the updated book data to the file
         fwrite(&newData, sizeof(struct BOOK), 1, fp);
         gotoxy(30,22);

@@ -3,7 +3,7 @@
 #include<conio.h>
 #include<windows.h>
 
-#include "library.h"
+#include "../library/library.h"
 #include "student.h"
 
 //create a function to take input of book data
@@ -105,7 +105,7 @@ void addStudent(){
     system("cls");
     FILE *fp;
     struct STUDENT student;
-    fp = fopen("studentData.dat","ab+");
+    fp = fopen("data/studentData.dat","ab+");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -137,7 +137,7 @@ void deleteStudent(){
     printf("Enter Student Name or Roll : ");
     fflush(stdin);
     gets(temp);
-    FILE *fp = fopen("studentData.dat", "rb+");
+    FILE *fp = fopen("data/studentData.dat", "rb+");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -146,7 +146,7 @@ void deleteStudent(){
         return;
     }
     // Create a temporary file to store the records that are not being deleted
-    FILE *tempFile = fopen("tempfile.dat", "wb"); // Open for writing
+    FILE *tempFile = fopen("data/tempfile.dat", "wb"); // Open for writing
     if(tempFile==NULL){
         system("cls");
         fclose(fp);
@@ -171,9 +171,9 @@ void deleteStudent(){
     fclose(fp);
     fclose(tempFile);
     // Remove the original file
-    remove("studentData.dat");
+    remove("data/studentData.dat");
     // Rename the temporary file to the original file name
-    if (rename("tempfile.dat", "studentData.dat") == 0) {
+    if (rename("data/tempfile.dat", "data/studentData.dat") == 0) {
         if (deleted) {
             gotoxy(30, 22);
             printf("Student record(s) deleted successfully.\n");
@@ -196,7 +196,7 @@ void viewStudent(){
     char header[][20] = {"SL N0.", "NAME", "ROLL", "CLASS", "STREAM", "SUBJECT", "PHONE"};
     int columnLen[] = {8,30,10,15,10,20,12};
     int columnNo = 7;
-    char fileName[] = "studentData.dat";
+    char fileName[] = "data/studentData.dat";
     char fileMode[] = "rb";
     greetingMessage(26, 2, "~: Current Students :~");
     printStudentTable(header, columnLen, columnNo, fileName, fileMode);
@@ -212,8 +212,8 @@ void updateStudent(){
     fflush(stdin);
     gets(temp);
     // Open the file for reading and writing
-    FILE *fp = fopen("studentData.dat","rb+");
-    FILE *tempFile = fopen("tempfile.dat", "wb");
+    FILE *fp = fopen("data/studentData.dat","rb+");
+    FILE *tempFile = fopen("data/tempfile.dat", "wb");
     if(fp==NULL){
         system("cls");
         fclose(fp);
@@ -236,9 +236,9 @@ void updateStudent(){
         fclose(tempFile);
         fclose(fp);
         // Remove the original file
-        remove("studentData.dat");
+        remove("data/studentData.dat");
 
-        rename("tempfile.dat", "studentData.dat");
+        rename("data/tempfile.dat", "data/studentData.dat");
         gotoxy(30,13);
         printf("Student Found...Press any key to continue.....");
         getch();
@@ -247,7 +247,7 @@ void updateStudent(){
         system("cls");
         greetingMessage(25, 3, "~: Update Students Record :~");
         newData = inputStudentData();
-        FILE *fp = fopen("studentData.dat", "ab+");
+        FILE *fp = fopen("data/studentData.dat", "ab+");
         // Write the updated book data to the file
         fwrite(&newData, sizeof(student), 1, fp);
         gotoxy(30,22);

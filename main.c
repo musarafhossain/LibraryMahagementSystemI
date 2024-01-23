@@ -3,12 +3,12 @@
 #include<conio.h>
 #include<windows.h>
 
-#include "library.h"
-#include "book.h"
-#include "student.h"
-#include "librarian.h"
-#include "checkinout.h"
-#include "dashboard.h"
+#include "src/library/library.h"
+#include "src/book/book.h"
+#include "src/student/student.h"
+#include "src/librarian/librarian.h"
+#include "src/checkinout/checkinout.h"
+#include "src/dashboard/dashboard.h"
 
 //function declaration
 void dashboard(void);

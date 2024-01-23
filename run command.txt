@@ -1,0 +1,1 @@
+gcc main.c src/book/book.c src/checkinout/checkinout.c src/dashboard/dashboard.c src/librarian/librarian.c src/student/student.c src/library/library.c -o LibSys
