@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<windows.h>
+#include<stdlib.h>
 
 #include "src/library/library.h"
 #include "src/book/book.h"
@@ -191,6 +192,12 @@ void help(){
 
 //main function...code execution start from here
 int main(){
+    // Create "data" directory
+    #ifdef _WIN32
+        system("mkdir data");
+    #else
+        system("mkdir -p data");
+    #endif
     while (1){ // Infinite loop
         //clear console
         system("cls");
