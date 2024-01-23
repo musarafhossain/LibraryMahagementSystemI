@@ -2,7 +2,7 @@
 This is a Library Management System developed in C language.<br>
 Developer -> Musaraf Hossain (Computer Science)
 # ScreenShorts
-![Alt text](screenshots/main_menu.png "Optional title")
+<img src="screenshots/main_menu.png" alt="Example Image" width="300"/>
 # Library Management System Documentation
 
 ## 1. Introduction
