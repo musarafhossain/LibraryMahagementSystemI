@@ -10,10 +10,37 @@ Developer -> Musaraf Hossain (Computer Science)
 <img src="screenshots/dashboard.png" alt="Dashboard" width="600"/>
 
 ## Book Search
-<img src="screenshots/dashboard_book_search.png" alt="Example Image" width="600"/>
+<img src="screenshots/dashboard_book_search.png" alt="Book Search" width="600"/>
 
 ## Student Search
-<img src="screenshots/dashboard_student_search.png" alt="Example Image" width="600"/>
+<img src="screenshots/dashboard_student_search.png" alt="Student Search" width="600"/>
+
+## Book Check-In Record Section 
+<img src="screenshots/book_check_in_section.png" alt="Check-In" width="600"/>
+
+## Book Check-Out Record Section 
+<img src="screenshots/book_check_out_section.png" alt="Check-Out" width="600"/>
+
+## Book Data Management Section 
+<img src="screenshots/book_manage_section.png" alt="Book" width="600"/>
+
+## Book Record
+<img src="screenshots/book_data_list.png" alt="Book Data" width="600"/>
+
+## Student Data Management Section 
+<img src="screenshots/student_manage_section.png" alt="Student" width="600"/>
+
+## Student Record
+<img src="screenshots/student_data_list.png" alt="Student Data" width="600"/>
+
+## Librarian Management Section 
+<img src="screenshots/librarian_section.png" alt="Librarian" width="600"/>
+
+## Librarian Record
+<img src="screenshots/librarian_data.png" alt="Librarian Data" width="600"/>
+
+## Help Section 
+<img src="screenshots/help_section.png" alt="Help" width="600"/>
 
 # Library Management System Documentation
 ## 1. Introduction
