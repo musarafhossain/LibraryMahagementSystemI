@@ -2,10 +2,18 @@
 This is a Library Management System developed in C language.<br>
 Developer -> Musaraf Hossain (Computer Science)
 # ScreenShorts
+
 ## Main Menu
 <img src="screenshots/main_menu.png" alt="Main Menu" width="600"/>
+
 ## Dashboard
 <img src="screenshots/dashboard.png" alt="Dashboard" width="600"/>
+
+## Book Search
+<img src="screenshots/dashboard_book_search.png" alt="Example Image" width="600"/>
+
+## Student Search
+<img src="screenshots/dashboard_student_search.png" alt="Example Image" width="600"/>
 
 # Library Management System Documentation
 ## 1. Introduction
